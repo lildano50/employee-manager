@@ -4,12 +4,12 @@ USE employees_db;
 
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30) INT NOT NULL
+  name VARCHAR(30)
 );
 
 CREATE TABLE role (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(30) NOT NULL,
+  title VARCHAR(30),
   salary DECIMAL,
   department_id INT,
   FOREIGN KEY (department_id)
@@ -17,7 +17,7 @@ CREATE TABLE role (
   ON DELETE SET NULL
 );
 
-CREATE TABLE employee(
+CREATE TABLE employee (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
