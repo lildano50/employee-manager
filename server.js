@@ -30,11 +30,41 @@ function init(promptQuestions){
         .then((response) => {
             while (response !== "Quit") {
                 if (response.initial === "View all departments") {
-                    console.log("viewing departments:")
+                    console.log("Viewing Departments:")
                     db.query('SELECT * FROM department;', function (err, results) {
                         console.log(results);
                       });
-                };
+                } else if (response.intial === "View all roles") {
+                    console.log("Viewing Roles:")
+                    db.query('SELECT * FROM role;', function (err, results) {
+                        console.log(results);
+                      });
+                }  else if (response.intial === "View all employees") {
+                    console.log("Viewing Employees:")
+                    db.query('SELECT * FROM employee;', function (err, results) {
+                        console.log(results);
+                      });
+                }  else if (response.intial === "Add a department") {
+                    // console.log("Viewing Departments:")
+                    // db.query('SELECT * FROM department;', function (err, results) {
+                    //     console.log(results);
+                    //   });
+                } else if (response.intial === "Add a role") {
+                    // console.log("Viewing Departments:")
+                    // db.query('SELECT * FROM department;', function (err, results) {
+                    //     console.log(results);
+                    //   });
+                } else if (response.intial === "Add an employee") {
+                    // console.log("Viewing Departments:")
+                    // db.query('SELECT * FROM department;', function (err, results) {
+                    //     console.log(results);
+                    //   });
+                } else if (response.intial === "Update an employee role") {
+                    // console.log("Viewing Departments:")
+                    // db.query('SELECT * FROM department;', function (err, results) {
+                    //     console.log(results);
+                    //   });
+                }
             };
         });
     }
